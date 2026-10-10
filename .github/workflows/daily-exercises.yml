@@ -1,0 +1,37 @@
+name: Ejercicios prácticos diarios
+on:
+  schedule:
+    - cron: '35 12 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - daily_exercise.py
+      - .github/workflows/daily-exercises.yml
+permissions:
+  contents: read
+concurrency:
+  group: daily-exercises
+  cancel-in-progress: false
+jobs:
+  exercise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run one practical exercise
+        run: python daily_exercise.py
+      - name: Save dated fictional data and results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add exercises/ samples/
+          if ! git diff --cached --quiet; then
+            git commit -m "Daily practical exercise with fictional data $(date -u +%F)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
