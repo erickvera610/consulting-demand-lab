@@ -4,6 +4,7 @@ on:
     - cron: '35 12 * * *'
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - daily_exercise.py
       - .github/workflows/daily-exercises.yml
