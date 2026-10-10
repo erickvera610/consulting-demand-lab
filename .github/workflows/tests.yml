@@ -18,3 +18,9 @@ jobs:
         with:
           node-version: 22
       - run: node test_demo.cjs
+
+      - name: Check enhanced browser behavior
+        run: node test_enhanced.cjs
+      - name: Reproduce case study
+        run: python benchmark.py
+

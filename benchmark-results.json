@@ -1,0 +1,168 @@
+{
+  "project": "consulting-demand-lab",
+  "executed_at_utc": "2026-10-10T18:37:09.393640+00:00",
+  "execution_method": "Python script",
+  "summary": {
+    "public_dataset": "AirPassengers",
+    "selected_model": "linear_trend",
+    "holdout_mae": 37.38053452507048,
+    "seasonal_baseline_mae": 47.833333333333336,
+    "interval_coverage": 0.75,
+    "unit": "thousands of passengers per month",
+    "test_months": 12
+  },
+  "runs": [
+    {
+      "selected_model": "linear_trend",
+      "model_selection": [
+        {
+          "model": "seasonal_naive",
+          "validation_mae": 33.36111111111111,
+          "folds": [
+            {
+              "train_end_exclusive": 96,
+              "validation_end_exclusive": 108,
+              "mae": 40.166666666666664
+            },
+            {
+              "train_end_exclusive": 108,
+              "validation_end_exclusive": 120,
+              "mae": 12.583333333333334
+            },
+            {
+              "train_end_exclusive": 120,
+              "validation_end_exclusive": 132,
+              "mae": 47.333333333333336
+            }
+          ]
+        },
+        {
+          "model": "linear_trend",
+          "validation_mae": 28.186797945317835,
+          "folds": [
+            {
+              "train_end_exclusive": 96,
+              "validation_end_exclusive": 108,
+              "mae": 30.06294085729789
+            },
+            {
+              "train_end_exclusive": 108,
+              "validation_end_exclusive": 120,
+              "mae": 26.883160898187057
+            },
+            {
+              "train_end_exclusive": 120,
+              "validation_end_exclusive": 132,
+              "mae": 27.614292080468555
+            }
+          ]
+        },
+        {
+          "model": "log_trend",
+          "validation_mae": 29.16045317027613,
+          "folds": [
+            {
+              "train_end_exclusive": 96,
+              "validation_end_exclusive": 108,
+              "mae": 11.644749834801567
+            },
+            {
+              "train_end_exclusive": 108,
+              "validation_end_exclusive": 120,
+              "mae": 41.743720699094176
+            },
+            {
+              "train_end_exclusive": 120,
+              "validation_end_exclusive": 132,
+              "mae": 34.09288897693265
+            }
+          ]
+        }
+      ],
+      "mae": 37.38053452507048,
+      "baseline_mae": 47.833333333333336,
+      "train_days": 132,
+      "test_days": 12,
+      "actual": [
+        417.0,
+        391.0,
+        419.0,
+        461.0,
+        472.0,
+        535.0,
+        622.0,
+        606.0,
+        508.0,
+        461.0,
+        390.0,
+        432.0
+      ],
+      "predicted": [
+        410.40559761652577,
+        405.40559761652565,
+        441.2237794347075,
+        434.0419612528894,
+        438.22377943470747,
+        475.9510521619802,
+        511.31468852561665,
+        512.4965067074348,
+        468.3146885256166,
+        433.4965067074348,
+        403.13287034379846,
+        430.9510521619802
+      ],
+      "baseline": [
+        360.0,
+        342.0,
+        406.0,
+        396.0,
+        420.0,
+        472.0,
+        548.0,
+        559.0,
+        463.0,
+        407.0,
+        362.0,
+        405.0
+      ],
+      "lower": [
+        352.86063586664244,
+        347.8606358666423,
+        383.6788176848242,
+        376.49699950300607,
+        380.67881768482414,
+        418.4060904120969,
+        453.7697267757333,
+        454.9515449575515,
+        410.76972677573326,
+        375.95154495755145,
+        345.58790859391513,
+        373.4060904120969
+      ],
+      "upper": [
+        467.9505593664091,
+        462.950559366409,
+        498.76874118459085,
+        491.5869230027727,
+        495.7687411845908,
+        533.4960139118635,
+        568.8596502754999,
+        570.0414684573182,
+        525.8596502754999,
+        491.0414684573181,
+        460.6778320936818,
+        488.49601391186354
+      ],
+      "interval_target": 0.8,
+      "interval_test_coverage": 0.75,
+      "interval_method": "Absolute residual quantile from earlier validation folds; empirical, not guaranteed coverage",
+      "test_start_exclusive": 132,
+      "period": 12,
+      "dataset": "airpassengers",
+      "data_kind": "public historical benchmark",
+      "unit": "thousands of passengers per month",
+      "note": "Model selected on three earlier folds; final holdout used once. Historical airline data do not represent current demand. Independent consulting project."
+    }
+  ],
+  "limitations": "Reproducible prototype evidence, not employer affiliation or production certification."
+}

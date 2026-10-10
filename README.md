@@ -1,16 +1,32 @@
-# Consulting Demand Lab
+# Demand Forecasting Lab
 
-BCG-sector-inspired demand forecasting with chronological holdout, weekday effects, MAE and a baseline.
+The original single-model synthetic demonstration now compares three forecasting candidates and includes a public historical benchmark. A final year remains untouched while three earlier folds select the model.
 
-An AI-assisted educational portfolio project prepared for Erik Vera's internship learning. This is a working prototype, not production software. Authorship and skills should be represented based on what you can explain and change independently.
+**[Open the live demo](https://erickvera610.github.io/consulting-demand-lab/)** · [Spanish tutorial](TUTORIAL_ES.md) · [Case study](CASE_STUDY.md) · [Measured results](benchmark-results.json)
 
-## Public demo
+## Understand it in one minute
 
-[Open browser demo](https://erickvera610.github.io/consulting-demand-lab/). Visitors can run examples on their device without write access to this repository.
+Historical sequence → rolling-origin validation → model choice → chronological holdout
 
-## Run in two minutes
+Seasonal repetition is the baseline. Additive trend plus seasonality and log trend plus seasonality provide interpretable alternatives. Forecast selection minimizes validation MAE. An absolute-residual quantile supplies an empirical interval; actual final-holdout coverage is reported even when it is below target.
 
-Requires Python 3.11 or newer; no pip dependencies.
+## Measured evidence
+
+Reproduced with Python by `python benchmark.py`. Execution timestamp is recorded in the JSON report. Synthetic JavaScript values may differ because the random generator differs.
+
+| Measurement | Result |
+|---|---|
+| public dataset | AirPassengers |
+| selected model | linear_trend |
+| holdout mae | 37.3805 |
+| seasonal baseline mae | 47.8333 |
+| interval coverage | 0.7500 |
+| unit | thousands of passengers per month |
+| test months | 12 |
+
+## Run locally
+
+Python 3.11 or 3.12, standard library only. No API keys.
 
 ```bash
 git clone https://github.com/erickvera610/consulting-demand-lab.git
@@ -18,38 +34,44 @@ cd consulting-demand-lab
 python app.py
 ```
 
-Open http://127.0.0.1:8000. On Windows, use `py app.py` if `python` is unavailable. Stop with Ctrl+C. Run `python -m unittest discover -v` to execute tests.
+Open http://127.0.0.1:8000. Stop with Ctrl+C. The public browser demo requires no installation.
 
-## Architecture
+## Reproduce and inspect
 
-- `index.html`: responsive accessible interface; renders output with textContent.
-- `app.py`: local HTTP service, `/health`, and validated JSON POST `/api/run`.
-- `core.py`: domain logic separated from transport and presentation.
-- `test_core.py`: deterministic behavior and failure cases.
-- `.github/workflows/tests.yml`: Python 3.11 and 3.12 CI.
-- `TUTORIAL_ES.md`: beginner Spanish guide and interview practice.
+```bash
+python -m unittest discover -v
+node test_enhanced.cjs
+python benchmark.py
+python daily_exercise.py
+```
 
-## API
+Use `core.run({"mode":"evaluate","dataset":"airpassengers"})` for the public monthly benchmark, or `core.run({"mode":"evaluate","dataset":"synthetic","seed":42,"noise":5})` for daily fictional exercises.
 
-POST a JSON object to `/api/run`; inputs are the same fields used by the interface. Responses are JSON. Invalid inputs return 400; unknown paths return 404. GET `/health` returns `{"status":"ok"}`.
+## Read the source
 
-## Design and limits
+- `core.py`: public algorithm entry point and preserved original exercise.
+- `evaluation.py`: featured implementation.
+- `enhanced.js`: browser implementation, readable without a build system.
+- `app.py`: localhost HTTP API.
+- `test_*.py` and `test_enhanced.cjs`: behavior and edge cases.
+- `benchmark.py`: evidence generator.
 
-Pronosticar demanda ayuda a planear recursos. Ajusto una tendencia lineal con 84 días y calculo efectos por día de la semana usando solo entrenamiento. Los siguientes 28 días se reservan para prueba. MAE es el promedio del error absoluto. Comparo con repetir la última semana; si no supera ese baseline, el modelo no aporta suficiente valor.
+## Limitations
 
-The built-in HTTP server is for a local demonstration. There is no authentication, rate limiting, or public production deployment. Never enter personal application records on a publicly exposed demo. Bind to localhost by default. For Codespaces only, run `HOST=0.0.0.0 python app.py` and keep the forwarded port private; usage may consume your GitHub quota.
-
-## Review and contribution workflow
-
-Create a feature branch, make one small change, run the tests, commit it, push the branch, and open a pull request. Explain the change and validation. Do not fabricate collaboration or commit history. Suggested first improvement: add a new input option with one behavior test and update this README.
-
-## References
-
-- https://docs.python.org/3/library/http.server.html
-- https://docs.github.com/en/actions/tutorials/build-and-test-code/python
-
-License: MIT.
+AirPassengers is historical airline demand, not current customer sales. Months are serially dependent. Only three folds and twelve holdout observations are available. Interval coverage is empirical and not guaranteed. Model selection and interval calibration share validation folds; a separate calibration period would strengthen the method.
 
 ## Daily practical exercises
 
-A daily GitHub Actions job runs one dated fictional scenario and saves inputs and outputs in `exercises/`. Read [Spanish daily guide](EJERCICIOS_DIARIOS_ES.md). Commits are authored by github-actions[bot].
+One dated fictional scenario runs daily through GitHub Actions. `exercises/YYYY-MM-DD/result.json` preserves inputs and outputs; `samples/latest.json` holds the latest input. Bot-authored report commits document script execution, not manual daily development. [Daily Spanish guide](EJERCICIOS_DIARIOS_ES.md).
+
+## Authorship and relevance
+
+Independent AI-assisted learning project in Erik Vera's portfolio. No affiliation with FOX, Tesla or BCG. The documentation distinguishes supplied implementation from improvements the learner actually makes. Code is MIT licensed; third-party data provenance is documented separately.
+
+## Featured portfolio
+
+- [Road Vision Lab](https://github.com/erickvera610/road-vision-lab)
+- [Demand Forecasting Lab](https://github.com/erickvera610/consulting-demand-lab)
+- [Media Prediction Lab](https://github.com/erickvera610/media-content-lab)
+- [Classification Evaluation Lab](https://github.com/erickvera610/ml-model-lab)
+- [Incident Workflow Lab](https://github.com/erickvera610/incident-response-lab)
