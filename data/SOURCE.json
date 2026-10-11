@@ -1,0 +1,8 @@
+{
+  "name": "UCI Bike Sharing daily counts",
+  "url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+  "download_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+  "license": "CC BY 4.0",
+  "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894",
+  "sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be"
+}

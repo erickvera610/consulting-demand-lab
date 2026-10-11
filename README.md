@@ -75,3 +75,11 @@ Independent AI-assisted learning project in Erik Vera's portfolio. No affiliatio
 - [Media Prediction Lab](https://github.com/erickvera610/media-content-lab)
 - [Classification Evaluation Lab](https://github.com/erickvera610/ml-model-lab)
 - [Incident Workflow Lab](https://github.com/erickvera610/incident-response-lab)
+
+## Trained model with real data
+
+[Interactive model demo](https://erickvera610.github.io/consulting-demand-lab/model-demo.html) · [Model card](MODEL_CARD.md) · [Training and tests](https://github.com/erickvera610/consulting-demand-lab/actions)
+
+Install `pip install -r requirements-model.txt`, run `python train_model.py`, then `python -m unittest discover -v` and `node test_model.cjs`. Run `python model_server.py` for the connected Python inference API at http://127.0.0.1:8001.
+
+The original demonstration remains available. This new experiment trains on downloaded public data with checksum verification and separate validation/test partitions. Exported weights execute in the browser and Python API; see the model card for limitations and the exact relation to internship skills.

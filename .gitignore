@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 *.db
 .venv/
+
+data/*.txt
+data/*.csv
+__pycache__/
