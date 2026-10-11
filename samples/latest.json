@@ -1,4 +1,5 @@
 {
-  "seed": 20261010,
-  "noise": 11
+  "seed": 20261011,
+  "noise": 15,
+  "mode": "evaluate"
 }
