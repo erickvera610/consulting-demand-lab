@@ -14,14 +14,38 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: pip install -r requirements-model.txt
+      - run: python train_model.py
       - run: python -m unittest discover -v
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: node test_demo.cjs
-
       - name: Check enhanced browser behavior
         run: node test_enhanced.cjs
       - name: Reproduce case study
         run: python benchmark.py
+      - name: Upload reproducible model evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-evidence-${{ matrix.python }}
+          path: |
+            artifacts/*.json
+          retention-days: 30
 
+  pytorch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements-pytorch.txt
+      - run: python pytorch_demand.py
+      - name: Upload PyTorch demand evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytorch-demand-evidence
+          path: |
+            artifacts/pytorch-demand-results.json
+            artifacts/pytorch-demand.pt
+          retention-days: 30
