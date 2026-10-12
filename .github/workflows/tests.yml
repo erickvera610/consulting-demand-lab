@@ -31,7 +31,6 @@ jobs:
           path: |
             artifacts/*.json
           retention-days: 30
-
   pytorch:
     runs-on: ubuntu-latest
     steps:
@@ -49,3 +48,12 @@ jobs:
             artifacts/pytorch-demand-results.json
             artifacts/pytorch-demand.pt
           retention-days: 30
+  container-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t consulting-demand-lab .
+      - run: docker run -d --name consulting-demand-lab -p 8001:8001 consulting-demand-lab
+      - run: sleep 3 && curl --fail http://127.0.0.1:8001/health
+      - if: always()
+        run: docker rm -f consulting-demand-lab || true
