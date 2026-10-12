@@ -1,85 +1,102 @@
 # Demand Forecasting Lab
 
-The original single-model synthetic demonstration now compares three forecasting candidates and includes a public historical benchmark. A final year remains untouched while three earlier folds select the model.
+> **Recruiter quick view:** real historical demand data, chronological evaluation, seasonal baseline, Ridge vs neural-network comparison, PyTorch extension, model export, browser inference, error analysis, tests, and CI. Start with [RECRUITER_OVERVIEW.md](RECRUITER_OVERVIEW.md), [PORTFOLIO_EVIDENCE.md](PORTFOLIO_EVIDENCE.md), [MODEL_CARD.md](MODEL_CARD.md), and the [interactive model demo](https://erickvera610.github.io/consulting-demand-lab/model-demo.html).
 
-**[Open the live demo](https://erickvera610.github.io/consulting-demand-lab/)** · [Spanish tutorial](TUTORIAL_ES.md) · [Case study](CASE_STUDY.md) · [Measured results](benchmark-results.json)
+## Real-data next-day demand experiment
 
-## Understand it in one minute
+The main trained-model experiment uses the **UCI Bike Sharing Dataset** with 731 real daily observations from Capital Bikeshare. After 14 days of history for lag features, 717 prediction rows remain.
 
-Historical sequence → rolling-origin validation → model choice → chronological holdout
+Chronological split:
 
-Seasonal repetition is the baseline. Additive trend plus seasonality and log trend plus seasonality provide interpretable alternatives. Forecast selection minimizes validation MAE. An absolute-residual quantile supplies an empirical interval; actual final-holdout coverage is reported even when it is below target.
+- Train: **430 days**
+- Validation: **143 days**
+- Final test: **144 days**
 
-## Measured evidence
+Models compared:
 
-Reproduced with Python by `python benchmark.py`. Execution timestamp is recorded in the JSON report. Synthetic JavaScript values may differ because the random generator differs.
+- repeat-same-weekday seasonal baseline,
+- Ridge regression,
+- small ReLU MLPs.
+
+Held-out MAE:
+
+| Model | MAE (rentals/day) |
+|---|---:|
+| Seasonal baseline | **1218.74** |
+| scikit-learn neural network | **1020.32** |
+| Ridge regression | **888.78** |
+
+The neural model improves over the seasonal baseline, but **Ridge wins the measured held-out comparison**. The project therefore emphasizes model judgment rather than assuming a more complex model is better.
+
+## PyTorch extension
+
+`pytorch_demand.py` adds a separate PyTorch MLP benchmark under the same chronological 60/20/20 discipline.
+
+```bash
+python -m pip install -r requirements-pytorch.txt
+python pytorch_demand.py
+```
+
+The script selects hidden width using validation MAE and writes the held-out result to `artifacts/pytorch-demand-results.json`. Do not quote that metric until the script has been run in the current environment.
+
+## Features and leakage control
+
+Inputs include:
+
+- weekday and month cycles,
+- elapsed days,
+- previous-day count,
+- previous-week count,
+- trailing 7-day average,
+- trailing 14-day average.
+
+Target-day observed weather and same-day casual/registered counts are excluded. The task is rolling one-day-ahead forecasting, not a fixed-origin multi-month forecast.
+
+## Additional forecasting benchmark
+
+The repository also preserves an AirPassengers experiment using rolling-origin validation and a final chronological holdout.
 
 | Measurement | Result |
-|---|---|
-| public dataset | AirPassengers |
-| selected model | linear_trend |
-| holdout mae | 37.3805 |
-| seasonal baseline mae | 47.8333 |
-| interval coverage | 0.7500 |
-| unit | thousands of passengers per month |
-| test months | 12 |
+|---|---:|
+| Selected model | linear trend + seasonality |
+| Holdout MAE | **37.3805** thousand passengers/month |
+| Seasonal baseline MAE | **47.8333** |
+| Empirical interval coverage | **0.75** |
+| Test months | **12** |
 
-## Run locally
+This small historical benchmark demonstrates forecasting workflow, not production demand planning.
 
-Python 3.11 or 3.12, standard library only. No API keys.
+## Demo and reproducibility
 
-```bash
-git clone https://github.com/erickvera610/consulting-demand-lab.git
-cd consulting-demand-lab
-python app.py
-```
-
-Open http://127.0.0.1:8000. Stop with Ctrl+C. The public browser demo requires no installation.
-
-## Reproduce and inspect
+**[Interactive trained-model demo](https://erickvera610.github.io/consulting-demand-lab/model-demo.html)** · [Model card](MODEL_CARD.md) · [Actions](https://github.com/erickvera610/consulting-demand-lab/actions)
 
 ```bash
+python -m pip install -r requirements-model.txt
+python train_model.py
 python -m unittest discover -v
-node test_enhanced.cjs
-python benchmark.py
-python daily_exercise.py
+node test_model.cjs
+python model_server.py
 ```
 
-Use `core.run({"mode":"evaluate","dataset":"airpassengers"})` for the public monthly benchmark, or `core.run({"mode":"evaluate","dataset":"synthetic","seed":42,"noise":5})` for daily fictional exercises.
+The browser and Python API use exported parameters; parity tests verify the numerical path.
 
-## Read the source
+## Skills demonstrated
 
-- `core.py`: public algorithm entry point and preserved original exercise.
-- `evaluation.py`: featured implementation.
-- `enhanced.js`: browser implementation, readable without a build system.
-- `app.py`: localhost HTTP API.
-- `test_*.py` and `test_enhanced.cjs`: behavior and edge cases.
-- `benchmark.py`: evidence generator.
+Python, scikit-learn, PyTorch, time-series feature engineering, chronological splitting, neural networks, Ridge regression, baselines, validation-based model selection, leakage control, model export, inference APIs, error analysis, tests, and CI.
+
+## Key files
+
+- `train_model.py` — real-data Ridge/MLP comparison.
+- `pytorch_demand.py` — PyTorch neural benchmark.
+- `MODEL_CARD.md` — protocol, metrics, largest errors, and limitations.
+- `artifacts/model-results.json` — held-out predictions and errors.
+- `RECRUITER_OVERVIEW.md` — recruiter review path and screenshot checklist.
+- `PORTFOLIO_EVIDENCE.md` — evidence summary.
 
 ## Limitations
 
-AirPassengers is historical airline demand, not current customer sales. Months are serially dependent. Only three folds and twelve holdout observations are available. Interval coverage is empirical and not guaranteed. Model selection and interval calibration share validation folds; a separate calibration period would strengthen the method.
+The real-data experiment covers one bike-sharing system and two historical years. The neural networks are small CPU models, not large-scale deep learning. Extreme weather is not directly represented in the feature set. No causal, state-of-the-art, or production-readiness claim is made.
 
-## Daily practical exercises
+## Authorship
 
-One dated fictional scenario runs daily through GitHub Actions. `exercises/YYYY-MM-DD/result.json` preserves inputs and outputs; `samples/latest.json` holds the latest input. Bot-authored report commits document script execution, not manual daily development. [Daily Spanish guide](EJERCICIOS_DIARIOS_ES.md).
-
-## Authorship and relevance
-
-Independent AI-assisted learning project in Erik Vera's portfolio. No affiliation with FOX, Tesla or BCG. The documentation distinguishes supplied implementation from improvements the learner actually makes. Code is MIT licensed; third-party data provenance is documented separately.
-
-## Featured portfolio
-
-- [Road Vision Lab](https://github.com/erickvera610/road-vision-lab)
-- [Demand Forecasting Lab](https://github.com/erickvera610/consulting-demand-lab)
-- [Media Prediction Lab](https://github.com/erickvera610/media-content-lab)
-- [Classification Evaluation Lab](https://github.com/erickvera610/ml-model-lab)
-- [Incident Workflow Lab](https://github.com/erickvera610/incident-response-lab)
-
-## Trained model with real data
-
-[Interactive model demo](https://erickvera610.github.io/consulting-demand-lab/model-demo.html) · [Model card](MODEL_CARD.md) · [Training and tests](https://github.com/erickvera610/consulting-demand-lab/actions)
-
-Install `pip install -r requirements-model.txt`, run `python train_model.py`, then `python -m unittest discover -v` and `node test_model.cjs`. Run `python model_server.py` for the connected Python inference API at http://127.0.0.1:8001.
-
-The original demonstration remains available. This new experiment trains on downloaded public data with checksum verification and separate validation/test partitions. Exported weights execute in the browser and Python API; see the model card for limitations and the exact relation to internship skills.
+Independent AI-assisted learning project in Erik Vera's portfolio. No employer affiliation or proprietary employer data. Code is MIT licensed; third-party data attribution is documented separately.
