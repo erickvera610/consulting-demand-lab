@@ -1,0 +1,16 @@
+{
+  "target_date": "2012-08-10",
+  "prediction": 6668.674175440976,
+  "features": {
+    "weekday_sin": -0.433883739117558,
+    "weekday_cos": -0.9009688679024191,
+    "month_sin": -0.8660254037844384,
+    "month_cos": -0.5000000000000004,
+    "elapsed_days": 587,
+    "lag_1_day": 7286.0,
+    "lag_7_days": 7175.0,
+    "past_7_day_mean": 6938.428571428572,
+    "past_14_day_mean": 6994.071428571428
+  },
+  "limitations": "Historical MLP experiment, not a current operational forecast. Ridge outperformed this MLP on the recorded test set."
+}
