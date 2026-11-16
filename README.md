@@ -2,6 +2,14 @@
 
 > **Recruiter quick view:** real historical demand data, chronological evaluation, seasonal baseline, Ridge vs neural-network comparison, PyTorch extension, model export, browser inference, error analysis, tests, and CI. Start with [RECRUITER_OVERVIEW.md](RECRUITER_OVERVIEW.md), [PORTFOLIO_EVIDENCE.md](PORTFOLIO_EVIDENCE.md), [MODEL_CARD.md](MODEL_CARD.md), and the [interactive model demo](https://erickvera610.github.io/consulting-demand-lab/model-demo.html).
 
+## New: forecast from dated history
+
+The [dated-history CLI](HISTORY_FORECAST.md) accepts a target date and 14 daily observations, builds the nine model features, and rejects missing, duplicate or future dates. It reproduces all 144 archived held-out forecasts with zero measured prediction difference. Includes an offline inference sample, raw parity evidence and five new test methods.
+
+```bash
+python forecast_history.py samples/history-example.json
+```
+
 ## Real-data next-day demand experiment
 
 The main trained-model experiment uses the **UCI Bike Sharing Dataset** with 731 real daily observations from Capital Bikeshare. After 14 days of history for lag features, 717 prediction rows remain.
