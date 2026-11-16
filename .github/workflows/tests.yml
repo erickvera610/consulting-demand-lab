@@ -15,6 +15,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: pip install -r requirements-model.txt
       - run: python train_model.py
+      - run: python validate_history.py
       - run: python -m unittest discover -v
       - uses: actions/setup-node@v4
         with:
