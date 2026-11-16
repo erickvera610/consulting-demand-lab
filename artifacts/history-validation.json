@@ -1,0 +1,729 @@
+{
+  "checked_forecasts": 144,
+  "max_absolute_prediction_difference": 0.0,
+  "dataset_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be",
+  "model_sha256": "f6187e2f7cdff14ba9384f9a44fc3b2c1bdbd38713231a1cd297fe826b7f4cb9",
+  "interpretation": "Parity with the archived MLP, not an accuracy improvement.",
+  "rows": [
+    {
+      "date": "2012-08-10",
+      "prediction": 6668.674175440976,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-11",
+      "prediction": 5595.0272735786,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-12",
+      "prediction": 6005.192549090505,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-13",
+      "prediction": 6824.168611686699,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-14",
+      "prediction": 7186.840373269851,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-15",
+      "prediction": 7320.276145612474,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-16",
+      "prediction": 7087.415916765107,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-17",
+      "prediction": 6891.712940531409,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-18",
+      "prediction": 6685.593680363492,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-19",
+      "prediction": 6920.803400239617,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-20",
+      "prediction": 5800.23836319663,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-21",
+      "prediction": 7057.56595689161,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-22",
+      "prediction": 7375.468137109088,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-23",
+      "prediction": 7119.3085460416105,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-24",
+      "prediction": 7145.056570930303,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-25",
+      "prediction": 7246.356148430493,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-26",
+      "prediction": 5880.565189801078,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-27",
+      "prediction": 6332.52900896533,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-28",
+      "prediction": 7233.1147640856125,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-29",
+      "prediction": 7454.617915032621,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-30",
+      "prediction": 7383.491297139093,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-08-31",
+      "prediction": 7116.7374671729485,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-01",
+      "prediction": 6715.06847496212,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-02",
+      "prediction": 5602.239733297486,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-03",
+      "prediction": 5895.204810149047,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-04",
+      "prediction": 6171.49813135148,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-05",
+      "prediction": 6913.012428275653,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-06",
+      "prediction": 6955.468507249896,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-07",
+      "prediction": 5870.309814719168,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-08",
+      "prediction": 6983.554620413093,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-09",
+      "prediction": 5844.126030511405,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-10",
+      "prediction": 6967.865979420769,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-11",
+      "prediction": 7136.823754700371,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-12",
+      "prediction": 7181.125900909426,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-13",
+      "prediction": 7020.372118957921,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-14",
+      "prediction": 7005.7890368056715,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-15",
+      "prediction": 6812.811981993061,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-16",
+      "prediction": 7037.988931705331,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-17",
+      "prediction": 6119.384523298276,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-18",
+      "prediction": 6115.576290219442,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-19",
+      "prediction": 4697.355836622334,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-20",
+      "prediction": 7233.52459498303,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-21",
+      "prediction": 7134.88583038014,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-22",
+      "prediction": 7567.1546841810805,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-23",
+      "prediction": 7287.159735531324,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-24",
+      "prediction": 6749.380846952315,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-25",
+      "prediction": 6051.378142148197,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-26",
+      "prediction": 6679.911906963619,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-27",
+      "prediction": 6989.029078485602,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-28",
+      "prediction": 6654.778811143556,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-29",
+      "prediction": 6554.45570797053,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-09-30",
+      "prediction": 7139.224269915132,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-01",
+      "prediction": 5479.296570561521,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-02",
+      "prediction": 5708.186755692688,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-03",
+      "prediction": 4008.0417843940513,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-04",
+      "prediction": 7003.478493795323,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-05",
+      "prediction": 6685.189976318432,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-06",
+      "prediction": 7382.635744394362,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-07",
+      "prediction": 6612.577688611871,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-08",
+      "prediction": 3248.672263316521,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-09",
+      "prediction": 5534.780484109053,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-10",
+      "prediction": 6157.994095913027,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-11",
+      "prediction": 7116.592856754391,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-12",
+      "prediction": 7118.799502315153,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-13",
+      "prediction": 6991.272250589462,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-14",
+      "prediction": 5981.81461346651,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-15",
+      "prediction": 6008.3856067460265,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-16",
+      "prediction": 5530.6013393291005,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-17",
+      "prediction": 7005.784591569902,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-18",
+      "prediction": 6893.27695354901,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-19",
+      "prediction": 6912.711803166132,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-20",
+      "prediction": 5351.5404604406585,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-21",
+      "prediction": 6794.201188066172,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-22",
+      "prediction": 6122.676050304514,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-23",
+      "prediction": 6515.155866046898,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-24",
+      "prediction": 6931.876658020385,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-25",
+      "prediction": 7106.229141276278,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-26",
+      "prediction": 6640.262506725247,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-27",
+      "prediction": 6689.592564352286,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-28",
+      "prediction": 6456.285878204211,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-29",
+      "prediction": 3995.2498276101423,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-30",
+      "prediction": 1787.3048014222304,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-10-31",
+      "prediction": 3087.596413416106,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-01",
+      "prediction": 5766.14416526431,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-02",
+      "prediction": 6446.858034973982,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-03",
+      "prediction": 6328.324387871377,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-04",
+      "prediction": 5647.749417478788,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-05",
+      "prediction": 4529.775744420292,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-06",
+      "prediction": 5225.969564722315,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-07",
+      "prediction": 5966.677641447693,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-08",
+      "prediction": 5254.979448423968,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-09",
+      "prediction": 5872.96867748551,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-10",
+      "prediction": 6443.794427752389,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-11",
+      "prediction": 6773.153299469606,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-12",
+      "prediction": 6907.142580027894,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-13",
+      "prediction": 6655.429892228047,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-14",
+      "prediction": 4354.651429189553,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-15",
+      "prediction": 5703.386995282846,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-16",
+      "prediction": 5908.913753620285,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-17",
+      "prediction": 6066.776125220881,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-18",
+      "prediction": 5982.252153086303,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-19",
+      "prediction": 5437.328027701946,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-20",
+      "prediction": 6420.4402868123525,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-21",
+      "prediction": 6017.38170190701,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-22",
+      "prediction": 5403.63616417877,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-23",
+      "prediction": 4631.979848788252,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-24",
+      "prediction": 4919.382162294643,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-25",
+      "prediction": 3798.8110683094405,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-26",
+      "prediction": 4564.520689470013,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-27",
+      "prediction": 6652.3481993726255,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-28",
+      "prediction": 5693.471948115816,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-29",
+      "prediction": 6201.254498065631,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-11-30",
+      "prediction": 6228.514223141502,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-01",
+      "prediction": 5744.703685556962,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-02",
+      "prediction": 5490.12486480228,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-03",
+      "prediction": 5452.1247354147745,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-04",
+      "prediction": 6637.501748965036,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-05",
+      "prediction": 7063.403290445938,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-06",
+      "prediction": 6260.469329591464,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-07",
+      "prediction": 6077.236554216884,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-08",
+      "prediction": 5727.813722663106,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-09",
+      "prediction": 5945.882608710341,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-10",
+      "prediction": 4123.307390168394,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-11",
+      "prediction": 6252.347027741506,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-12",
+      "prediction": 5880.521913331231,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-13",
+      "prediction": 5775.283037526546,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-14",
+      "prediction": 6081.636131768717,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-15",
+      "prediction": 6086.017951441054,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-16",
+      "prediction": 5444.763888290661,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-17",
+      "prediction": 4629.807520712481,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-18",
+      "prediction": 5611.513862237865,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-19",
+      "prediction": 5993.295723587172,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-20",
+      "prediction": 5761.131789293723,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-21",
+      "prediction": 5164.819339214958,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-22",
+      "prediction": 4575.459469683356,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-23",
+      "prediction": 3447.2847536918935,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-24",
+      "prediction": 3816.0807626795813,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-25",
+      "prediction": 3355.473909833532,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-26",
+      "prediction": 3956.9733790956293,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-27",
+      "prediction": 4122.779787420445,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-28",
+      "prediction": 4365.698256831465,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-29",
+      "prediction": 4115.811397344867,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-30",
+      "prediction": 3630.1084225304076,
+      "absolute_difference": 0.0
+    },
+    {
+      "date": "2012-12-31",
+      "prediction": 4443.124255914194,
+      "absolute_difference": 0.0
+    }
+  ]
+}
